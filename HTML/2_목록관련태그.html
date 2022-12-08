@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>2_목록 관련 태그</title>
+    </head>
+
+    <body>
+        <!--li : list 의 약자-->
+        <li>목록1</li>
+        <li>목록2</li>
+
+        <h4>ul : 순서없는 목록 태그</h4>
+        <ul>
+            <li>HTML
+                <ul>
+                    <!--목록 안에 목록을 넣어줄수있다.-->
+                    <li>글자관련</li>
+                    <li>목록관련</li>
+                </ul>
+            </li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+        </ul>
+
+        <h4>ol : 순서있는 목록 태그(순서표현방식:숫자,i,I,a,A)</h4> 
+        <ol type=""><!--type="원하는형식" 기본값:숫자,i,a,A-->
+            <li>HTML
+                <ol start="5"> <!--순서 시작값 지정-->
+                    <li>글자관련</li>
+                    <li>목록관련</li>
+                </ol>
+            </li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+        </ol>
+        
+        <!--reversed 속성으로 역순 표현-->
+        <h4>reversed 속성</h4>
+        <ol reversed>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+        </ol>
+
+        <h4>dl : 설명과 관련된 목록 태그</h4>
+        <dl>
+            <dt>이곳은 제목을 설정하는 태그</dt>
+            <dd>여기에 설명을 작성</dd>
+            <dd>여러줄도 작성 가능</dd>
+
+            <dt>또 다른 제목도 설정 가능</dt>
+            <dd>다른 제목에 또 다른 설명도 가능</dd>
+
+        </dl>
+        <hr>
+        <h3>자바(Java) 학습내용</h3>
+        <h5>담당 강사 : 어문경</h5>
+
+        이메일 : eossy@iei.or.kr
+        <hr>
+        <ul>
+            <li>프로그래밍 언어</li>
+            <ul>
+                <li><del>Java</del></li>
+            </ul>
+            <li>데이터베이스</li>
+            <ul>
+                <li><del>Oracle</del></li>
+            </ul>
+            <li>Frontend</li>
+            <ol>
+                <li><mark>HTML5</mark></li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>JQuery</li>
+            </ol>
+            <li>서버 개발 기술</li>
+            <ol type="i">
+                <li><s>JDBC</s></li>
+                <li>Servlet</li>
+                <li>JSP</li>
+                <li>AjAX</li>
+            </ol>
+            <li>프레임워크</li>
+            <ol type="a">
+                <li>Mybatis</li>
+                <li><b>Spring</b></li>
+            </ol>
+        </ul>
+        
+        <hr>
+        <h3>연습문제</h3>
+
+        <ul>
+            <li>
+                따뜻한 음료
+            </li>
+            <ol>
+                <li>커피</li>
+                <ul>
+                    <li><b>아메리카노</b></li>
+                    <li>카페라떼</li>
+                    <li><s>에스프레소</s></li>
+                </ul>
+                <li>녹차</li>
+                <li><u>둥글레차</u></li>
+            </ol>
+            <li>차가운 음료</li>
+            <ol>
+                <li>커피</li>
+                <li>스무디
+                    <ol type="i">
+                        <li>블루베리스무디</li>
+                        <li>플레인요거트</li>
+                        <li><mark>딸기복숭아스무디</mark></li>
+                    </ol>
+                </li>
+
+                <li>식혜<sub>(수제)</sub></li>
+            </ol>
+        </ul>
+
+        <h1>주말에 해야할 일</h1>
+        <h2>이름:어문경</h2>
+        <hr>
+        <ul>
+            <li>잠자기
+                <ul>
+                    <li><s>오래자기</s></li>
+                </ul>
+            </li>
+            <li>빨래하기
+                <ul>
+                    <li>
+                        <s>세탁기</s>
+                    </li>
+                </ul>
+            </li>
+            <li>밥먹기
+                <ol type="I">
+                    <li><mark>아침먹기</mark></li>
+                    <li>점심먹기</li>
+                    <li>간식먹기</li>
+                    <li>저녁먹기<sup>피자</sup></li>
+                </ol>
+            </li>
+            <li>운동하기
+                <ol type="A">
+                    <li>산책가기</li>
+                    <li><b>숨쉬기</b></li>
+                    <li>헬스장가기<sub>불가능</sub></li>
+                </ol>
+
+            </li>
+
+        </ul>
+        
+        <br><br><br><br><br>
+        
+        <a href="0_Index.html">인덱스로 이동</a>
+        
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+
+</html>

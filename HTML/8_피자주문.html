@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>피자주문</title>
+</head>
+<body>
+    <h3>피자 주문</h3>
+    
+    <form action="test.do">
+
+        <label for="username">고객명 :</label>
+        <input type="text" id="username" name="userName"> <br>
+        <label for="phone">전화번호 :</label>
+        <input type="tel" id="phone" name="phone"> <br>
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" name="email"><br>
+
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="size" id="s"><label for="s">small</label>
+            <input type="radio" name="size" id="m"><label for="m">medium</label>
+            <input type="radio" name="size" id="l"><label for="l">large</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="top" id="b"> <label for="b">bacon</label>
+            <input type="checkbox" name="top" id="c"> <label for="c">cheese</label>
+            <input type="checkbox" name="top" id="o"> <label for="o">onion</label>
+            <input type="checkbox" name="top" id="mr"> <label for="mr">mushroom</label>
+        </fieldset>
+        <br>
+        <label for="wt">희망 배송 시간 :</label>
+        <input type="time" name="time" id="wt"> <br>
+        <br>
+        <label for="wish">배송시 요청사항</label> <br>
+        <textarea name="wish" id="wish" cols="15" rows="2"></textarea> <br>
+        <input type="submit" value="주문하기">
+    </form>
+
+    <br><br>
+    <a href="0_Index.html">인덱스로 돌아가기</a>
+</body>
+</html>

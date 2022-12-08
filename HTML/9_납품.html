@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>고객 납품</title>
+</head>
+
+<body>
+    <form action="test.do">
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+                <li><label for="name">납품자 명: </label><input type="text" id="name" placeholder="이름"></li>
+                <li><label for="email">email: </label><input type="email" id="email" placeholder="ex@naver.com"></li>
+                <li><label for="url">홈페이지: </label><input type="url" id="url" placeholder="http://"></li>
+            </ol>
+        </fieldset>
+        <fieldset>
+            <legend>납품 정보</legend>
+            <ul>
+                <li><label for="pname">상품명 : </label><input type="text" name="pname" id="pname"></li>
+                <li><label for="pcount">납품 수량 : </label><input type="number" name="pcount" id="pcount" placeholder="최소수량 100" min="100"></li>
+                <li><label for="pgrade">납품 등급  </label><input type="range" name="pgrade" id="pgrade"></li>
+                <li><label for="pcontent">기타 사항 : </label><textarea name="pcontent" id="pcontent" cols="20" rows="2"></textarea></li>
+            </ul>
+        </fieldset>
+        <br>
+        <button>전송하기</button>
+    </form>
+</body>
+
+</html>

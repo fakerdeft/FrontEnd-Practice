@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <title>표 관련 태그</title>
+        <meta charset="UTF-8">
+
+        <!--CSS영역 스타일 지정하는 영역-->
+        <style>
+
+            thead{
+                background-color: coral;
+            }
+            tbody{
+                background-color: darkkhaki;
+                text-align: center;
+            }
+            tfoot{
+                background-color: aqua;
+            }
+
+            h1{
+                color: blue;
+            }
+
+
+        </style>
+
+
+
+    </head>
+
+    <body>  
+        <h1>표 형식</h1>   
+        <!--
+            table 태그 : 웹 문서상의 표를 나타내는 태그
+            <table>
+                <tr></tr> : 표의 한 행을 의미한다.
+                <th></th> : 표의 첫 행 (대문자 혹은 굵은 글씨로 표기됨)
+                <td></td> : 행 안의 각 내용
+            </table>
+        -->
+
+        <table border="1"><!--border : 표의 경계선-->
+            <caption>
+                라면 종류 <!--테이블 설명글-->
+            </caption>
+            <tr>
+                <th>이름</th>
+                <th>제조사</th>
+                <th>매운정도(매움/순함)</th>
+            </tr>
+            <tr>
+                <td>신라면</td>
+                <td>농심</td>
+                <td>매움</td>
+            </tr>
+            <tr>
+                <td>너구리</td>
+                <td>농심</td>
+                <td>매운맛</td>
+            </tr>
+           <!--tr>td*3   tr태그 안에 td태그 3개 넣은채로 만들어줘-->
+            <tr>
+                <td>진라면</td>
+                <td>오뚜기</td>
+                <td>순한맛</td>
+            </tr>
+            <tr>
+                <td>라면 총 3개</td>
+            </tr>
+        </table>
+
+        <h1>표의 행, 열 병합하기</h1>
+
+        <table border="1">
+            <tr>
+                <!--width:길이,align:정렬,rowspan:행병합-->
+                <td width="70px" align="center" rowspan="3">사진</td>
+                <td width="80px">이름</td>
+                <td width="150px"></td>
+            </tr>
+            <tr>
+                <td>연락처</td><!--이름 td에 지정한 크기로 따라간다.(큰크기)-->
+                <td></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td height="100px">자기소개</td>
+                <td colspan="2"></td> <!--colspan : 열병합 -->
+            </tr>
+            <tr>
+                <td height="100px">입사동기</td>
+                <td style="color:red"></td>
+            </tr>
+
+        </table>
+        
+        <h3>실습</h3>
+
+        <table border="1">
+            <caption>
+                <b>일일 확진자 현황</b> <sub>(09.22.00시 기준)</sub>
+            </caption>
+            <tr>
+                <th colspan="5">확진환자</th>
+            </tr>
+            <tr>
+                <th>누적</th>
+                <th colspan="4">발생현황</th>
+            </tr>
+            <tr>
+                <td rowspan="2">14,778,405</td>
+                <th align="center" style="color:blue">일일확진</th>
+                <th align="center" style="color:blue">위중증</th>
+                <th align="center" style="color:blue">신규입원</th>
+                <th align="center" style="color:blue">사망</th>
+            </tr>
+            <tr>
+                <td align="center" style="color:red">33,009</td>
+                <td align="center" style="color:red">428</td>
+                <td align="center" style="color:red">135</td>
+                <td align="center" style="color:red">59</td>
+            </tr>
+
+        </table>
+
+        <br>
+        <!--thead tbody tfoot 구조 나누기-->
+        
+        <h2>테이블 구조화</h2>
+        <!-- (tr>td*3)*4 -->
+        <table border="1">
+            <tr>
+                <thead>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>취미</th>
+                </thead>
+            </tr>
+           <tbody>
+                <tr>
+                    <td>공유</td>
+                    <td>40</td>
+                    <td>불법공유</td>
+                </tr>
+                <tr>
+                    <td>윤계상</td>
+                    <td>45</td>
+                    <td>장작패기</td>
+                </tr>
+                <tr>
+                    <td>진선규</td>
+                    <td>44</td>
+                    <td>사격</td>
+                </tr>
+            </tbody> 
+
+            <tfoot>
+                <tr>
+                    <td>총 인원</td>
+                    <td colspan="2">3명</td>
+                </tr>
+            </tfoot>
+
+
+
+        </table>
+        
+
+    </body>
+
+    <br><br><br>
+    <a href="0_Index.html">인덱스로 돌아가기</a>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+
+</html>

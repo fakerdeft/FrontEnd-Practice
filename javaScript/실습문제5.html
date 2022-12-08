@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>문제 5</legend>
+        <h3>개강일부터 오늘까지의 날짜를 alert으로 출력해 주세요. (getTime() 메서드 사용)</h3>
+        개강일 : <input type="date" name="" id="startDay"> <button onclick="daytoday();">날짜 계산</button>
+
+    </fieldset>
+    <script>
+        function daytoday(){
+            var day = document.getElementById("startDay").value; //날짜 데이터 추출
+            var today = new Date();
+            var startDay = new Date(day);
+            
+            console.log(today.getTime());
+
+            console.log(startDay.getTime());
+
+            var dayday = parseInt((today.getTime()-startDay.getTime()) / (24*60*60*1000));
+
+            alert("개강일로부터 "+dayday+"일 지났습니다.");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

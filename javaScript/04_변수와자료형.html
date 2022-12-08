@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>변수와 자료형</title>
+</head>
+<body>
+    <h1>변수와 자료형</h1>
+    <h2>변수 선언시 var,let,const를 이용해서 선언이 가능하다.</h2>
+
+    <h3>var,let,const의 차이점</h3>
+
+    <h4>1)변수 선언 방법</h4>
+    <button onclick="test1();">클릭</button>
+
+    <h4>2)스코프(변수의 사용 범위)</h4>
+    <button onclick="scopeTest()">ㅋㄹ</button>
+    
+    <script>
+        function test1(){
+
+            //var
+            var userId='userId';
+            console.log(userId);
+
+            //중복선언 가능 (자바에선 x)
+            var userId='userId2';
+            console.log(userId);
+
+            //재할당 가능
+            userId='asd123';
+            console.log(userId);
+
+            console.log('---------------------------');
+
+            //let은 중복선언 불가능, 재할당은 가능
+            let userPwd = 'pwd123';
+            console.log(userPwd);
+
+            //중복선언 불가
+            // let userPwd= 'qwe456';
+            // console.log(userPwd);
+
+            //재할당 가능
+            userPwd = 'asd123';
+            console.log(userPwd);
+
+            console.log("---------------------------");
+            
+            //const 중복선언,재할당 x (상수개념)
+
+            const userName = '김규민';
+            console.log(userName);
+
+            //중복선언 불가능
+            // const userName = '성해은';
+            // console.log(userName);
+
+            //재할당 불가능
+            userName = '이나연';
+            console.log(userName);
+
+            /*
+                var타입은 자유롭게 변수 선언을 할 수 있는 장점이자 단점을 가지고 있다.
+                중복된 변수가 생길 수 있고 값이 변경될 여지가 있기 때문에
+                이름 보완해서 나온 타입이 let과 const이다.
+            */
+
+        }
+
+        //범위 확인 함수
+        function scopeTest(){
+            //1) var는 function scope == 변수가 선언된 함수 영역 내에서 사용 가능하다.
+            var name = '조승우';
+            console.log(name);
+
+            if(true){
+                var age = 20;
+            }
+
+            console.log(age); //사용 가능
+
+            for(var i=0; i<5; i++){
+
+            }
+
+            console.log(i); //사용 가능
+
+            //2)let,const는 block scope == 변수가 사용된 블럭{} 내에서만 사용가능(지역변수 개념)
+            //자바와 유사
+
+            if(true){
+                let hobby = '음악감상';
+                const gender = '남';
+            }
+            
+            // console.log(hobby); //사용불가
+            // console.log(gender); //사용불가
+
+        }
+
+        function test(){
+            console.log(name);
+        }
+
+    </script>
+
+    <h3>변수 선언 위치에 따른 전역/지역 변수</h3>
+    
+    <script>
+        //특정 함수 영역 밖에 선언된 변수는 전역변수로 사용(전역변수는 어디든 사용가능)
+        var declareVar = "var 전역변수";
+        let declareLet = "let 전역변수";
+        const declareConst = "const 전역변수";
+
+        // declareNone = "그냥 전역변수 권장x";
+
+        console.log(declareVar);
+        console.log(declareLet);
+        console.log(declareConst);
+        // console.log(declareNone);
+
+        window.onload = function(){//해당문서가 다 로딩된 후에 실행시키겠다.
+            //전역변수와 동일한 이름으로 지역변수 선언해보기
+            var declareVar = "var 지역변수";
+            let declareLet = "let 지역변수";
+            const declareConst = "const 지역변수";
+
+            console.log(declareVar);
+            console.log(declareLet);
+            console.log(declareConst);
+            //지역변수와 전역변수명이 중복일때 지역변수가 우선순위 가짐
+            console.log("------------------------");
+            //지역변수와 전역변수명이 중복일때 전역변수에 접근하고자 한다면?
+            //window. 또는 this. 으로 접근 가능 (var 타입만 가능하다.)
+            console.log(window.declareVar);
+            console.log(this.declareLet);
+
+            //let과 const는 전역변수 접근 불가 - undefined
+            console.log(window.declareLet);
+            console.log(window.declareConst);
+            console.log(this.declareLet);
+            console.log(this.declareConst);
+
+        }
+
+    </script>   
+
+    <hr>
+    <h3>자료형</h3>
+    <p>
+        변수 선언 시 자료형을 별도로 지정하지 않음 <br>
+        변수에 대입되는 값(리터럴)에 따라서 자동으로 결정된다.
+    </p>
+
+    <h4>자바스크립트의 자료형</h4>
+
+    <ul>
+        <li>string 문자열</li>
+        <li>number 숫자</li>
+        <li>boolean 논리값</li>
+        <li>object 객체</li>
+        <li>function 함수</li>
+        <li>undefined 정의되지 않음</li>
+    </ul>
+
+    <button onclick="typeTest();">자료형 테스트</button>
+    <div id="area" style="border:1px solid black;"></div>
+
+    <script>
+        function typeTest(){
+            let name = "하정우";
+            let age = 45;
+            let flag = true;
+
+            let hobby = ["영화감상","음악감상","뮤지컬감상"];
+            let user = {
+                name: "유연석",
+                age: 33,
+                id: "you"
+            };
+
+            let test = function(){
+                alert("반갑습니다람쥐");
+            }
+
+            let noVal;
+
+            console.log(name);
+            console.log(age);
+            console.log(flag);
+            console.log(hobby);
+            console.log(user);
+            console.log(test);
+            console.log(noVal);
+
+            var divEl = document.getElementById("area");
+
+            divEl.innerHTML = name + "의 자료형: "+typeof(name)+ "<br>";
+            divEl.innerHTML += age + "의 자료형: "+typeof(age)+ "<br>";
+            divEl.innerHTML += flag + "의 자료형: "+typeof(flag)+ "<br>";
+            divEl.innerHTML += hobby + "의 자료형: "+typeof(hobby)+ "<br>";
+            divEl.innerHTML += user + "의 자료형: "+typeof(user)+ "<br>";
+            divEl.innerHTML += test + "의 자료형: "+typeof(test)+ "<br>";
+            divEl.innerHTML += noVal + "의 자료형: "+typeof(noVal)+ "<br>";
+        }
+
+    </script>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

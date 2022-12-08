@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 가져오기 </title>
+    <style>
+        .area {
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML 요소에 접근하기(해당 요소 객체 가져오기)</h1>
+
+    <h3>1)아이디로 접근하기</h3>
+
+    <div id="area1" class="area"></div>
+    <button onclick="accessId();">아이디로 접근하기</button>
+
+    <script>
+        function accessId() {
+            //아이디로 요소 접근하기 
+            //document.getElementById("아이디명");
+            var area1 = document.getElementById("area1");
+
+            console.log(area1);
+            console.dir(area1);
+
+            //선택된 요소의 속성들에 접근하여 값을 가져온다거나 변경 가능하다.
+            //속성에 접근하고자 한다면 선택된 요소.접근할 속성명 
+            area1.innerHTML = "아이디로 접근 성공!!<br>";
+            area1.style.backgroundColor = "blue";
+            area1.style.width = '100px';
+            area1.style.color = 'white';
+            area1.style.height = '200px';
+
+
+        }
+    </script>
+
+    <br><br>
+    <div id="area2" class="area" style="background-color: cornflowerblue;"></div>
+    <button onclick="accessId2();">클릭할때 색상 변경</button>
+
+    <script>
+        function accessId2() {
+            //한번 클릭시 다른 색상으로 변경 후 다시 클릭하면 원래 색상으로 돌아오기 
+            var area2 = document.getElementById("area2");
+
+            console.dir(area2.style.backgroundColor);
+
+            if (area2.style.backgroundColor == "cornflowerblue") {
+                area2.style.backgroundColor = "skyblue";
+            } else {
+                area2.style.backgroundColor = "cornflowerblue";
+            }
+        }
+    </script>
+
+    <br><br>
+
+    <h3>2)태그명으로 접근하기</h3>
+
+    <!-- ul>li{목록$}*5 -->
+    <ul>
+        <li>목록1</li>
+        <li>목록2</li>
+        <li>목록3</li>
+        <li>목록4</li>
+        <li>목록5</li>
+    </ul>
+
+    <button onclick="accessTagName();">태그명으로 접근</button>
+
+    <script>
+        function accessTagName() {
+            //태그명으로 요소접근
+            //document.getElementsByTagName("태그명")
+            //선택된 여러개의 요소객체들은 배열에 담겨서 반환된다 
+            //(자바스크립트의 배열은 [] 로 표기)
+            var list = document.getElementsByTagName("li");
+            console.log(list);//[li요소객체,li요소객체,,,,]
+            console.log(list.length);
+            list[0].innerHTML = "<b>안녕하세요</b>";
+            list[1].innerHTML = "<s>허허</s>";
+        }
+
+    </script>
+
+    <br>
+
+    <h3>3)name속성값으로 접근하기 </h3>
+
+    <form action="">
+        <fieldset>
+            <legend>취미</legend>
+            <!-- (input[type=checkbox name=hobby value= id=]+label)*6 -->
+            <input type="checkbox" name="hobby" value="music" id="music">
+            <label for="music">음악감상</label>
+            <input type="checkbox" name="hobby" value="movie" id="movie">
+            <label for="movie">영화감상</label>
+            <input type="checkbox" name="hobby" value="walk" id="walk">
+            <label for="walk">산책</label>
+            <input type="checkbox" name="hobby" value="sleep" id="sleep">
+            <label for="sleep">잠자기</label>
+            <input type="checkbox" name="hobby" value="exercise" id="exercise">
+            <label for="exercise">운동하기</label>
+            <input type="checkbox" name="hobby" value="play" id="play">
+            <label for="play">놀기</label>
+        </fieldset>
+    </form>
+
+    <br>
+    <div class="area" id="area3"></div>
+    <br>
+    <button onclick="accessName();">name으로 접근하기</button>
+
+    <script>
+        function accessName() {
+            document.getElementById("area3").innerHTML = "";
+            //name 속성으로 요소를 가지고 오기
+            //document.getElementsByName("name값");
+            //선택된 요소 객체들이 배열에 담겨서 반환
+
+            //[input요소객체,input요소객체,input요소객체,,,,]
+            var hobby = document.getElementsByName("hobby");
+
+            console.log(hobby);
+
+            var checkedItem = "";
+
+            for (var i = 0; i < hobby.length; i++) {
+                if (hobby[i].checked) {
+                    checkedItem += hobby[i].value + "<br>";
+                }
+            }
+
+            console.log(checkedItem);
+
+            document.getElementById("area3").innerHTML = checkedItem;
+
+        }
+    </script>
+
+    <h3>4)클래스명으로 접근하기</h3>
+    <div class="test"></div>
+    <p class="test"></p>
+    <!-- ul.test>li*2 -->
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test test1"></pre>
+
+    <button onclick="accessClass();">class로 접근</button>
+
+    <script>
+        function accessClass() {
+            //class속성으로 요소를 가져오기
+            //document.getElementsByClassName("class속성값");-배열반환
+            var arr = document.getElementsByClassName("test");
+
+            console.log(arr);
+
+            for(var i=0;i<arr.length;i++){
+                console.log(arr[i]);
+            }
+        }
+
+    </script>
+
+    <h3>5)내가 원하는 요소 선택해서 가져오기(선택자 활용)</h3>
+
+    <div id="test1">테스트입니다</div>
+    <div class="test">
+        <h2>테스트1</h2>
+        <h2>테스트2</h2>
+    </div>
+
+
+    <span>안녕하세요.</span>
+    <h2>안녕히가세요.</h2>
+
+    <button onclick="accessSelector()">클릭</button>
+
+    <script>
+        function accessSelector(){
+            //선택자를 이용하여 요소를 가져올때
+            //document.querySelector("선택자"); - 선택된 요소 하나만 반환
+            //document.querySelectorAll("선택자"); - 선택된 요소 객체들을 배열에 담아 반환
+            
+            var divEl = document.querySelector("#test1");
+
+            console.log(divEl);
+
+            var divEls= document.querySelectorAll("div");
+
+            console.log(divEls);
+
+            var h2El = document.querySelectorAll(".test>h2");
+
+            console.log(h2El[0].innerHTML);
+
+            var spanEl = document.querySelector(".test+span");
+
+            console.log(spanEl);
+
+        }
+        
+
+    </script>
+    
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+</body>
+
+</html>

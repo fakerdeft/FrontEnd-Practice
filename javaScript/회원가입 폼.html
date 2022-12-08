@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입 폼</title>
+    <style>
+        .form1{
+            border: 1px solid gray;
+            border-radius: 3px 3px 3px 3px;
+            height: 24px;
+            
+        }
+        .large{
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+        .small{
+            font-size: 15px;
+            color: gray;
+            margin-top: -12px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <form action="test.do">
+        <fieldset>
+            <p class="large">* 아이디 : <input type="text" id="id" class="form1" placeholder="아이디 입력"></p>
+            <p class="small">첫글자는 반드시 영문자로, 그리고 영문자, 숫자를 포함하여 총 4~12자로 입력하시오.</p>
+            
+            <p class="large">* 비밀번호 : <input type="password" id="pw" class="form1" placeholder="비밀번호 입력"></p>
+            <p class="small">영문자, 숫자, 특수문자(!@#$%^&*)로 총 8~15자로 입력하시오.</p>
+            
+            <p class="large">* 비밀번호 확인 : <input type="password" id="pwc" class="form1" placeholder="비밀번호 다시 입력"></p>
+            <p class="small">위의 비밀번호와 일치하게 입력하시오.</p>
+            
+            <p class="large">* 이름 : <input type="text" id="name" class="form1" placeholder="이름 입력"></p>
+            <p class="small">한글로만 이루어져야 하며 2글자 이상으로 입력하시오.</p>
+            
+            <p class="large">* 이메일 : 
+                <input type="email" id="email" class="form1" maxlength="18" placeholder="이메일 입력"></p>
+            <p class="small">이메일 형식에 맞춰서 입력하시오. ex) xxxxx@gmail.com</p>
+
+            <p class="large">* 취미 : 
+                <input type="text" id="hobby" class="form1" placeholder="축구, 농구, 야구, 독서 등"></p>
+
+            <p class="large">* 거주지 : 
+                <select id="area" class="form1">
+                    <option value="서울">서울</option>
+                    <option value="경기">경기</option>
+                    <option value="강원">강원</option>
+                    <option value="충북">충북</option>
+                    <option value="충남">충남</option>
+                    <option value="경북">경북</option>
+                    <option value="경남">경남</option>
+                    <option value="전북">전북</option>
+                    <option value="전남">전남</option>
+                    <option value="제주">제주</option>
+                </select>
+            </p>
+            
+            <button type="submit" onclick="return register();">회원가입</button>
+            <button type="reset">취소</button>
+        </fieldset>
+    </form>
+
+    <script> 
+        function register(){
+            var id = document.getElementById("id").value;
+            var id_rule = /^[a-zA-Z]\w{3,11}$/;
+            var pw = document.getElementById("pw").value;
+            var pw_rule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,15}$/;
+            var pwc = document.getElementById("pwc").value;
+            var name = document.getElementById("name").value;
+            var name_rule = /^[가-힣]{2,}$/;
+            var email = document.getElementById("email").value;
+            var email_rule =  /^[0-9a-zA-Z]{1,}@[0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}$/;
+            var hobby = document.getElementById("hobby").value;
+            var area = document.getElementById("area").value;
+            
+            if(id==""){
+                alert("아이디를 입력해주세요.")
+                return false;
+            }
+            else if(!id_rule.test(id)){
+                alert("첫글자는 영문자로, 그리고 영문자, 숫자를 포함해 4~12자만 가능합니다.");
+                return false;
+            }
+            else if(pw==""){
+                alert("비밀번호를 입력해주세요.")
+                return false;
+            }
+            else if(!pw_rule.test(pw)){
+                alert("영문자, 숫자, 특수문자(!@#$%^&*)를 포함해 8~15자만 가능합니다.")
+                return false;
+            }
+            else if(pw!=pwc){
+                alert("비밀번호가 일치하지 않습니다.")
+                return false;
+            }
+            else if(name==""){
+                alert("이름을 입력해주세요.")
+                return false;
+            }
+            else if(!name_rule.test(name)){
+                alert("2글자 이상 한글만 가능합니다.")
+                return false;
+            }
+            else if(email==""){
+                alert("이메일을 입력해주세요.")
+                return false;
+            }
+            else if(!email_rule.test(email)){
+                alert("이메일 형식에 맞춰서 입력하세요.")
+                return false;
+            }
+            else if(hobby==""){
+                alert("취미를 입력해주세요.")
+                return false;
+            }
+        
+
+        }
+
+          
+      </script>
+      
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

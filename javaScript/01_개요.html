@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 개요</title>
+    <script>
+        function abc() {
+            window.alert("우와");
+        }
+    </script>
+    <!-- 내가 가져다 쓸 js파일을 script태그의 src 속성에 경로를 넣어 가져온다. -->
+    <script src="resources/sample.js"></script>
+</head>
+
+<body>
+    <!--
+            웹의 3요소
+            -HTML : 웹 문서의 큰 틀(뼈대)
+            -CSS : 스타일(색상,테두리,디자인 등등)
+            -javaScript : 웹 문서상에 이벤트가 발생했을때 실행해야할 동작들 처리(동적인 효과) 
+                            자바언어와는 무관하다.
+
+        -->
+    <h1>자바스크립트 개요</h1>
+
+    <h3>1.스크립트 언어란?</h3>
+    <p>
+        프로그램의 동작을 사용자(클라이언트) 의 요구에 맞게 수행되도록 해주는 용도 <br>
+        매우 빠르게 배우고 짧은 소스코드로 상호 작용 되도록 고안되었다.
+    </p>
+
+    <br>
+
+    <h3>
+        2.자바 스크립트란?
+    </h3>
+
+    <p>
+        웹 브라우저에서 가장 많이, 가장 기본적으로 사용되는 "인터프리터 방식"의 스크립트 언어 <br>
+        -자바 : 컴파일 방식 ->컴파일을 거치고 나서 생성된 코드를 읽어 실행한다. <br>
+        -자바스크립트 : 인터프리터 방식 -> 컴파일을 거치지 않고 한줄씩 읽어 실행한다. <br>
+    </p>
+
+    <br>
+
+    <h3>3.장단점</h3>
+    <h4>장점</h4>
+    <ul>
+        <li>요소에 이벤트가 발생했을 때 코드를 한줄씩 읽어 나가면서 수행되기 때문에 수행속도가 빠르다.</li>
+        <li>간단한 코드 작성으로 초보자가 쉽게 접할 수 있다.(단순한 구조,원칙) <br>
+            ex)접근제한자 개념 없음,메소드 정의시 반환형 정의안함,변수 선언시 자료형 지정할 필요 없음 등등..
+        </li>
+    </ul>
+
+    <h4>단점</h4>
+    <ul>
+        <li>웹에 특화된 기술 -> 내부에서 제공되는 기능이 제한적이다.</li>
+        <li>HTML내에 소스코드를 작성하게 되면 외부에 공개된다. -> 보안에 취약점이 있음</li>
+    </ul>
+
+    <br>
+    <h3>4.자바스크립트 소스코드 작성 위치에 따른 종류</h3>
+    <ol>
+        <li>inline(인라인) : 이벤트를 부여하고자 하는 요소 내에 간단한 소스코드를 작성해서 실행되게 하는 방법</li>
+        <li>internal(내부) : 해당 html 문서 내에 script 태그 영역에 소스코드를 작성해서 실행되게 하는 방법</li>
+        <li>external(외부) : 소스코드들을 별도의 .js파일로 작성해서 가져다가 실행되게 하는 방법</li>
+    </ol>
+
+    <h4>1)inline 방식</h4>
+    <p>
+        태그 내에 직접적으로 실행할 간단한 소스코드를 작성해서 실행시킨다.
+        주로 실행해야하는 소스코드가 소량일 경우 사용한다. <br>
+
+        [표현법] <br>
+        &lt;태그명 이벤트 속성="해당 요소에 해당 이벤트가 발생했을 때 실행할 소스코드"&gt;
+    </p>
+    <!--버튼이 클릭되는 순간(클릭 이벤트) 알람창 띄워보기-->
+    <button onclick="window.alert('버튼 누르지마요')">알람창 출력</button>
+    <button onclick="console.log('아아 여기는 콘솔 응답하라 ')">콘솔창 출력</button>
+
+    <br>
+    <h4>2)internal(내부) 방식</h4>
+    <p>
+        script 태그 영역에 함수단위로 소스코드들을 작성해놓고 <br>
+        어떤 요소에 어떤 이벤트 발생 시 해당 그 함수를 호출함으로써 실행시키는 방식 <br>
+        -script 태그는 head,body태그 내에 다 작성 가능 <br>
+    </p>
+
+    <!--인라인 방식 + 내부 방식-->
+    <button onclick="test();">테스트</button>
+
+    <!--순수 내부 방식-->
+    <button id="btn1">버튼1</button>
+
+    <script>
+        //자바스크립트 코드 작성 영역
+        /*
+            자바랑 주석 기호 동일
+        */
+        function test(){
+            console.log("콘솔창에 띄우기");
+        }
+
+        //이벤트를 적용시키고자 하는 요소 객체를 가져오기 (변수에 담기)
+        var btn = document.getElementById("btn1"); //<button id="btn1">버튼1</button>
+        //요소를 선택했으니 이벤트속성에 접근하여 해당 이벤트 발생시 실행시킬 코드 작성
+        btn.onclick = function(){
+            console.log("실행");
+            console.log(btn);
+            test(); //함수 내부에서 미리 선언된 외부함수 호출 가능
+        };
+    </script>
+    <!-- 버튼이 아닌 다른 요소에도 이벤트가 적용 가능하다. -->
+    <h4 onclick="abcd();">3)external(외부) 방식</h4>
+    <p onclick="window.alert('p태그 클릭이벤트')">
+        별도의 .js파일로 소스코드를 작성하고 해당 html에 가져다가 실행하는 방법
+    </p>
+
+    <button onclick="abcd();">외부방식버튼</button>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>문자열과 숫자</title>
+    <style>
+
+        .area{
+            width: 300px;
+            border: 1px solid black;
+        }
+        .big{
+            height: 700px;
+        }
+        .small{
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>문자열과 숫자</h1>
+    <h3>문자열 관련 메소드(내장함수)</h3>
+
+    <button onclick="stringFunc();">문자열 처리 메소드</button>
+    <div id="area1" class="area big"></div>
+    
+    <script>
+        function stringFunc(){
+            var str1 = "Gooddd Day";
+
+            var area1 = document.querySelector("#area1");
+
+            area1.innerHTML = "str1: "+str1+"<br>";
+            area1.innerHTML += "toUpperCase(): "+str1.toUpperCase()+"<br>";
+            area1.innerHTML += "toLowerCase(): "+str1.toLowerCase()+"<br>";
+            area1.innerHTML += "문자열의 길이: "+str1.length+"<br>";
+
+            for(var i=0; i<str1.length; i++){
+                area1.innerHTML += i+"번째 인덱스"+str1.charAt(i)+"<br>";
+            }
+
+            area1.innerHTML += "앞에서부터 첫 d의 인덱스: "+str1.indexOf("d")+"<br>";
+            area1.innerHTML += "뒤에서부터 첫 d의 인덱스: "+str1.lastIndexOf("y")+"<br>";
+            area1.innerHTML += "앞에서부터 첫 d의 인덱스: "+str1.indexOf("f")+"<br>";
+            //찾으려는 문자가 없으면 -1을 반환한다.
+
+            area1.innerHTML += "substring(시작인덱스): "+str1.substring(5)+"<br>";
+            area1.innerHTML += "substring(시작인덱스,끝인덱스): "+str1.substring(2,5)+"<br>";
+
+            var str2="햄버거,피자,치킨,콜라,사이다";
+
+            var food = str2.split(',');
+            area1.innerHTML += "food: "+food+"<br>";
+            area1.innerHTML += "food의 자료형: "+typeof(food)+"<br>";
+
+            for(var i=0; i<food.length; i++){
+                area1.innerHTML += "food: "+i+"번째 인덱스: "+food[i]+"<br>";
+            }
+
+            console.log(food);
+
+        }
+
+    </script>
+
+    <hr>
+
+    <h3>숫자(수학) 관련 메소드</h3>
+
+    <button onclick="mathMethod()">수학관련 메소드</button>
+
+    <div id="area2" class="area small"></div>
+
+    <script>
+        function mathMethod(){
+            let area2 = document.getElementById("area2");
+
+            //Math내장객체를 제공
+
+            area2.innerHTML = "절대값: "+Math.abs(-55)+"<br>";
+            area2.innerHTML += "랜덤값: "+Math.random(66)+"<br>";//0.0이상~1.0미만의 수를 반환
+            area2.innerHTML += "반올림: "+Math.round(15.65)+"<br>";
+            area2.innerHTML += "올림: "+Math.ceil(23.56)+"<br>";
+            area2.innerHTML += "버림: "+Math.floor(123.333)+"<br>";
+            area2.innerHTML += "제곱근: "+Math.sqrt(4)+"<br>";
+        }
+    </script>
+
+    <hr>
+    <h3>문자열과 숫자간의 산술연산</h3>
+
+    <button onclick="arithmethic();">산술연산</button>
+    <div class="area big" id="area3"></div>
+
+    <script>
+        function arithmethic(){
+
+            let test1 = 7+7;
+            let test2 = 7+"7";
+            let test3 = "7"+7;
+            let test4 = "7"+(7+7);
+
+            let area3 = document.querySelector("#area3");
+            area3.innerHTML = "숫자와 문자열 덧셈연산은 문자열로 변환되어 더해진다.<br>s";
+            area3.innerHTML += "test1: "+test1+"<br>";
+            area3.innerHTML += "test2: "+test2+"<br>";
+            area3.innerHTML += "test2의 타입: "+typeof(test2)+"<br>";
+            area3.innerHTML += "test3: "+test3+"<br>";
+            area3.innerHTML += "test3의 타입: "+typeof(test3)+"<br>";
+            area3.innerHTML += "test4: "+test4+"<br>";
+            area3.innerHTML += "test4의 타입: "+typeof(test4)+"<br>";
+
+            //그 외의 산술연산
+            //문자열이 자동형변환으로 숫자가 되어 연산된다.
+            //단 문자열에 숫자만 있어야한다.
+            var test5 = "7"*7;
+            var test6 = "7"-7;
+            var test7 = "7"/7;
+            area3.innerHTML += "<br>그 외의 산술연산은 문자열이 자동형변환으로 숫자가 되어 연산."
+                                    +" 단 문자열에 숫자만 있어야함 <br>";
+            area3.innerHTML += "test5: "+test5+"<br>";
+            area3.innerHTML += "test6: "+test6+"<br>";
+            area3.innerHTML += "test7: "+test7+"<br>";
+            
+            //강제형변환(문자열->숫자)
+            //Numbers(문자열)
+            //parseInt(문자열)
+            //parseFloat(문자열)
+
+            let iNum = 2; //숫자
+            let sNum = "3"; //문자열
+            
+            let test8 = iNum+sNum;
+            let test9 = iNum+Number(sNum);//문자열에 숫자만 있어야 처리가능. 문자있으면 NaN
+            let test10 = iNum+parseInt(sNum);//문자와 같이 있을때 문자 앞에 있는 숫자만 숫자로
+            let test11 = iNum+parseFloat(sNum);
+            area3.innerHTML+= "<hr>";
+            area3.innerHTML += "test8: "+test8+"<br>";
+            area3.innerHTML += "test9: "+test9+"<br>";
+            area3.innerHTML += "test10: "+test10+"<br>";
+            area3.innerHTML += "test11: "+test11+"<br>";
+
+            const fNum = "15.233";
+
+            const test12= iNum+fNum;
+            const test13= sNum+fNum;
+            const test14= iNum+Number(fNum);
+            const test15= iNum+parseInt(fNum);
+            const test16= iNum+parseFloat(fNum);
+
+            area3.innerHTML += "<hr>";
+            area3.innerHTML += "test12: "+test12+"<br>";
+            area3.innerHTML += "test13: "+test13+"<br>";
+            area3.innerHTML += "test14: "+test14+"<br>";
+            area3.innerHTML += "test15: "+test15+"<br>";
+            area3.innerHTML += "test16: "+test16+"<br>";
+
+        }
+
+    </script>
+
+    <hr>
+
+    정수1: <input type="number" id="num1"> <br>
+    정수2: <input type="number" id="num2"> <br>
+    <label id="result"></label>
+    <button onclick="plus()">덧셈</button>
+
+    <script>
+        function plus(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            // var result=num1+num2; 문자열로 값 가지고 오기 때문에 문자열 덧셈
+            var result = Number(num1)+parseInt(num2);
+
+            document.getElementById("result").innerHTML = result;
+
+            //isNaN(값): 값이 숫자인지 아닌지 판별하는 함수 숫자면 false 숫자가 아니면 true를 반환한다.
+
+            var isNum = isNaN(result);
+
+            var isNum2 = isNaN('asd');
+
+            console.log("isNum: "+isNum); //NaN인가? false
+
+            console.log("isNum2: "+isNum2); //NaN인가? true
+
+        }
+
+    </script>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

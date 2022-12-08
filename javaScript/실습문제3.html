@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>실습문제3</title>
+    <h1>HTML 태그에 접근 테스트</h1>
+    <h2>단 구매자는 태그이름으로 접근,상품명은 아이디로 접근, 구매가격은 name으로 접근</h2>
+    <style>
+        #bt{
+            background-color: rgb(227, 231, 235);
+            border: 1px solid black;
+        }
+        #area{
+            border: 1px solid salmon;
+            background-color: bisque;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    구매자: <input type="text" id="client" placeholder="구매자 입력"><br><br>
+    상품명: <input type="text" id="goods" placeholder="상품명 입력"><br><br>
+    가격: <input type="text" name="price" placeholder="가격 입력"><br><br>
+    <button id="bt" onclick="result()">입력값 출력하기</button><br><br>
+    <div id="area"></div>
+
+    <script>
+        function result(){
+            var client=document.getElementsByTagName("input");
+            var goods=document.getElementById("goods");
+            var price=document.getElementsByName("price");
+            var area=document.getElementById("area");
+
+            var str1=client[0].value;
+            var str2=goods.value;
+            var str3=price[0].value;
+
+            area.innerHTML="구매자: "+str1+"<br>상품명: "+str2+"<br>가격: "+str3+"원";
+        }
+    </script>
+
+</body>
+</html>

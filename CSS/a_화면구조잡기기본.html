@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>화면 구조 잡기 기본</title>
+    <style>
+        div{
+            box-sizing: border-box; /*지금부터 지정하는 가로세로 길이는 보더(테두리)포함 길이로 하겠다.*/
+            border: 1px solid black;
+        }
+        .outer{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        /*크게 3가지 영역으로 나눌것 header,content,footer 영역*/
+        .outer>div{ /*전체를 감싸는 outer div의 자식요소 div들의 width를 꽉차게 설정*/
+            width: 100%;
+        }  
+        #header{
+            background-color: blueviolet;
+        }
+        #footer{
+            background-color: burlywood;
+        }
+
+
+        #header,#footer{
+            height: 20%;
+        }
+        #content{
+            height: 60%;
+        }
+
+        #content>div{
+            height: 100%;
+            float: left;
+        }
+        #content1{
+            width: 20%;
+            background-color: aquamarine;
+        }
+        #content2{
+            width: 80%;
+            background-color: aqua;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div id="header"></div>
+        <div id="content">
+            <div id="content1"></div>
+            <div id="content2"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

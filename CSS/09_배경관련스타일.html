@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>배경 관련 스타일</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        #div-bg{
+            background-color: white;
+            padding: 50px;
+            border: 10px solid black;
+            width: 50%;/*div의 content가로 길이는 부모요소 body의 50%로 정하겠다.*/
+            box-sizing: border-box; /*border기준*/
+        }
+
+        .div-test{
+            margin: 30px;
+            border: 10px dashed;
+            padding: 20px;
+            background-color: blanchedalmond;
+            box-sizing: border-box;
+        }
+
+        #div1{
+            background-clip: border-box;
+        }
+        #div2{
+            background-clip: padding-box;
+        }
+        #div3{
+            background-clip: content-box;
+        }
+
+        #bg-img{
+            border: 2px solid black;
+            width: 70%;
+            height: 500px;
+
+            background-image: url(resources/imgs/화개.jpg);
+            background-size: 20% 20%;
+            background-repeat: repeat-x;
+            background-position: 50% 50%;
+            background-size: contain; /*가로 세로 상관없이 가득 찰때까지 채워준다.*/
+            background-attachment: scroll; /*fixed 고정*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>배경 관련 스타일</h1>
+    
+    <h3>background-color: 배경색을 지정하고자 할때 사용</h3>
+    <!-- div#div-bg -->
+    <div id="div-bg">
+        사람들의 둘 내일 하나에 봅니다. 이름을 가난한 별이 경, 계십니다. 못 별에도 마리아 것은 써 사랑과 봅니다. 보고, 릴케 밤을 까닭입니다. 아직 어머니 별 까닭입니다. 한 별 별 듯합니다. 쉬이 딴은 하늘에는 별 이런 아름다운 멀듯이, 까닭입니다. 하늘에는 청춘이 하나에 피어나듯이 그리워 하나에 하나에 계십니다. 아직 옥 소학교 겨울이 위에 어머니, 봅니다.
+    </div>
+
+    <br>
+
+    <h3>background-clip: 배경을 적용시키고자하는 범위를 지정할때 사용</h3>
+
+    <pre>
+        선택자{
+            background-clip : border-box/padding-box/content-box;
+        }
+    </pre>
+
+    <!-- div.div-test#div$*3 -->
+    <div class="div-test" id="div1">
+        헤일 마디씩 아스라히 시인의 지나가는 듯합니다. 위에 둘 하나에 계절이 별들을 사람들의 나는 언덕 강아지, 거외다. 아스라히 새겨지는 무덤 다 불러 라이너 둘 봅니다. 파란 아스라히 옥 별에도 계십니다. 위에도 나는 노루, 오는 하나의 이름을 있습니다. 마디씩 아름다운 슬퍼하는 당신은 불러 잠, 가난한 걱정도 까닭입니다. 멀리 강아지, 어머님, 덮어 말 차 계십니다. 계집애들의 내일 별 말 풀이 노새, 있습니다. 가득 겨울이 이름자를 않은 릴케 이름을 지나고 계십니다. 별 사랑과 흙으로 못 있습니다. 
+    </div>
+    <div class="div-test" id="div2">
+        헤일 마디씩 아스라히 시인의 지나가는 듯합니다. 위에 둘 하나에 계절이 별들을 사람들의 나는 언덕 강아지, 거외다. 아스라히 새겨지는 무덤 다 불러 라이너 둘 봅니다. 파란 아스라히 옥 별에도 계십니다. 위에도 나는 노루, 오는 하나의 이름을 있습니다. 마디씩 아름다운 슬퍼하는 당신은 불러 잠, 가난한 걱정도 까닭입니다. 멀리 강아지, 어머님, 덮어 말 차 계십니다. 계집애들의 내일 별 말 풀이 노새, 있습니다. 가득 겨울이 이름자를 않은 릴케 이름을 지나고 계십니다. 별 사랑과 흙으로 못 있습니다.
+    </div>
+    <div class="div-test" id="div3">
+        헤일 마디씩 아스라히 시인의 지나가는 듯합니다. 위에 둘 하나에 계절이 별들을 사람들의 나는 언덕 강아지, 거외다. 아스라히 새겨지는 무덤 다 불러 라이너 둘 봅니다. 파란 아스라히 옥 별에도 계십니다. 위에도 나는 노루, 오는 하나의 이름을 있습니다. 마디씩 아름다운 슬퍼하는 당신은 불러 잠, 가난한 걱정도 까닭입니다. 멀리 강아지, 어머님, 덮어 말 차 계십니다. 계집애들의 내일 별 말 풀이 노새, 있습니다. 가득 겨울이 이름자를 않은 릴케 이름을 지나고 계십니다. 별 사랑과 흙으로 못 있습니다.
+    </div>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+        선택자{
+            background-image:url(경로);
+            background-repeat:repeat/repeat-x/repeat-y/no-repeat;
+            background-size:auto/contain/cover/px %;
+            background-position:좌/우/가운데 위/아래/가운데/px %;
+            background-attachment:scroll/fixed; 
+        }
+    </pre>
+
+    <div id="bg-img"></div>
+
+    <br><br>
+
+    <a href="00_index.html">인덱스로</a>
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

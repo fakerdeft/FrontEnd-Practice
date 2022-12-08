@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 세부 구조 잡기</title>
+    <style>
+        div{
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .outer{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+
+        .outer>div{
+            width: 100%;
+        }
+        #header{height: 20%;}
+        #navi{height: 5%;}
+        #content{height: 55%;}
+        #footer{height: 20%;}
+
+        #header>div,#content>div{
+            height: 100%;
+            float: left;
+        }
+        #header1{width: 20%;}
+        #header2{width: 65%;}
+        #header3{width: 15%;}
+
+        #content1{width: 15%;}
+        #content2{width: 60%;}
+        #content3{width: 25%;}
+
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div id="header">
+            <div id="header1"></div>
+            <div id="header2"></div>
+            <div id="header3"></div>
+        </div>
+        <div id="navi">
+            
+        </div>
+        <div id="content">
+            <div id="content1"></div>
+            <div id="content2"></div>
+            <div id="content3"></div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+
+</body>
+</html>

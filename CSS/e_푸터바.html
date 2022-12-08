@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>푸터 바 만들기</title>
+    <style>
+        div{
+            box-sizing: border-box;
+        }
+        #footer{ /*작업을 위한 임시 영역크기*/
+            width: 1000px;
+            height: 150px;
+        }
+
+        #footer>div{
+            width: 100%;
+        }
+        #footer1{
+            height: 20%;
+        }
+        #footer2{
+            height: 80%;
+            /* border: 3px solid black; */
+        }
+        
+        #footer2>p{
+            margin: 0px; /*요소들 간의 간격이 생겨 0으로 초기화*/
+            width: 100%;
+            /* border: 1px solid red; */
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+        #p1{
+            padding: 5px 20px; /*상하 좌우*/
+            height: 80%;
+        }
+        #p2{
+            height: 20%;
+            text-align: center;
+        }
+
+        #footer1>a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+        <div id="footer">
+            <div id="footer1">
+                <a href="">이용약관</a> |
+                <a href="">개인정보취급방침</a> |
+                <a href="">인재채용</a> |
+                <a href="">고객센터</a> 
+            </div>
+            <div id="footer2">
+                <p id="p1">
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로지원 : 서울특별시 중구 남대문로 120 대일빌딩 2F, 3F <br>
+                    당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩 (구관) 19F, 20F
+                </p>
+
+                <p id="p2">
+                    Copyright © 1998-2022 KH Information Educational Institute All Right Reserved
+                </p>
+            </div>
+        </div>
+</body>
+</html>

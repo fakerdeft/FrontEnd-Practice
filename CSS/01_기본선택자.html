@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>기본 선택자</title>
+    <style>
+        *{
+            color: deepskyblue;
+        }
+
+        pre{
+            color: indianred;
+        }
+
+        li{
+            font-weight: bold;
+        }
+
+        #id1{
+            color: darksalmon;
+        }
+        #id2,#id3{
+            color: hotpink;
+        }
+        #id4{
+            color: lightsteelblue;
+        }
+        
+        .c2{
+            color: gold;
+        }
+
+        .c1{
+            color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 style="color: darkslategray;">CSS 기본 선택자</h1>
+    <!--인라인 스타일 방식 : 스타일 부여하고자 하는 요소 내에
+        style 속성을 이용해서 직접적으로 바로 기입하는 방식-->
+
+    <h3>선택자란?</h3>
+    <p>
+        특정 html요소를 선택하고자 할때 사용하는 기능 <br>
+        해당 요소를 선택해서 원하는 스타일과 기능을 적용시킬 수 있다.
+    </p>
+
+    <h3>1.모든(전체) 선택자 (*)</h3>
+    <p>
+        모든 요소를 선택하고자 할때 사용
+    </p>
+    <pre>
+        *{
+            스타일 속성 : 값;
+            스타일 속성 : 값;
+        }
+    </pre>
+
+    <h3>2.태그 선택자 (태그명)</h3>
+
+    <pre>
+        태그명{
+            스타일 속성 : 값;
+        }
+    </pre>
+
+    <h3>3.아이디 선택자(#아이디명)</h3>
+    <p>
+        해당 문서내에 특정 html요소 하나만을 선택할때 사용 <br>
+        단 해당 요소 id속성을 이용해서 고유 id값을 부여해야한다.
+    </p>
+
+    <pre>
+        #아이디명{
+            스타일 속성 : 값;
+        }
+    </pre>
+
+    <!-- ol>li#id$*4 -->
+    <ol>
+        <li id="id1">아이디 선택자</li>
+        <li id="id2">아이디 선택자</li>
+        <li id="id3">아이디 선택자</li>
+        <li id="id4">아이디 선택자</li>
+    </ol>
+
+    <h3>4.클래스 선택자(.클래스명)</h3>
+
+    <p>
+        해당 문서내에 내가 원하는 여러개의 요소를 선택하고자 할때 사용 <br>
+        클래스 속성을 추가해야한다. 
+    </p>
+    <pre>
+        .클래스명{
+            스타일 속성 : 값;
+        }
+    </pre>
+
+    <!-- ol>li.c${클래스선택자$}*4 -->
+    <ol>
+        <li class="c1">클래스선택자1</li>
+        <li class="c2">클래스선택자2</li>
+        <li class="c2">클래스선택자3</li>
+        <li class="c2">클래스선택자4</li>
+    </ol>
+
+    <!--
+        모든 태그 내에 공통적으로 쓸수있는 속성 : id,class
+
+        id:문서 내에 고유한 값으로 하나만 작성 가능하다 
+            중복되었을 경우 맨 처음 지정한 id가 선택된다.
+
+        class:문서 내에 여러개 작성 가능 (중복가능)
+
+    -->
+    <br><br>
+
+    <a href="00_index.html">인덱스로 가긔</a>
+
+    <br><br><br><br><br>
+
+</body>
+</html>

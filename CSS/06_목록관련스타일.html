@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>목록 관련 스타일</title>
+    <style>
+        #ul1{
+            list-style-type: disc; /*속이 찬 동그라미*/
+            list-style-type: circle; /*속이 빈 동그라미*/
+            list-style-type: square; /*네모*/
+            list-style-type: none; /*없음*/
+        }
+
+        #ol1{
+            list-style-type: decimal; /*기본숫자*/
+            list-style-type: decimal-leading-zero; /*01부터 시작하는 숫자*/
+            list-style-type: upper-alpha; /*알파벳 대문자로*/
+        }
+
+        #ul2{
+            list-style-position: outside;
+            list-style-position: inside;
+            list-style-image: url(resources/imgs/insta.png);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>목록 관련 스타일</h1>
+
+    <h3>list-style-type : 불릿기호 변경시켜줄때 사용</h3>
+    <pre>
+        *순서 없는 목록(ul)
+        선택자{
+            list-style-type:disc/circle/square/none;
+        }
+
+        *순서 있는 목록(ol)
+        선택자{
+            list-style-type:decimal/decimal-leading-zero;
+            list-style-type:lower-alpha/upper-alpha;
+            list-style-type:lower-roman/upper-roman;
+        }
+    </pre>
+
+    <h4>순서 없는 목록</h4>
+    <ul id="ul1">
+        <li>HTML</li>
+        <li>CSS/li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <h4>순서 있는 목록</h4>
+    <ol id="ol1" type="a">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ol>
+
+    <h3>list-style-position : 불릿기호 위치 조정</h3>
+    <h3>list-style-image : 불릿기호를 이미지 파일로</h3>
+
+    <pre>
+        선택자{
+            list-style-position: inside/outside;
+            list-style-image: url(적용시키고자하는 이미지 경로);
+        }
+    </pre>
+
+    <ul id="ul2">주말에 해야할것들
+        <li>잠자기</li>
+        <li>맛있는거 먹기</li>
+        <li>누워있기</li>
+        <li>천장보기</li>
+        <li>눈감기</li>
+    </ul>
+
+    <br><br>
+
+    <a href="00_index.html">인덱스로</a>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+</body>
+</html>

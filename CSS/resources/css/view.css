@@ -1,0 +1,241 @@
+/*통합 화면 CSS*/
+
+/*-----------세부구조---------------------*/
+div{
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+input{
+    box-sizing: border-box;
+}
+.outer{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+}
+
+.outer>div{
+    width: 100%;
+}
+#header{height: 20%;}
+#navi{height: 5%;}
+#content{height: 55%;}
+#footer{height: 20%;}
+
+#header>div,#content>div{
+    height: 100%;
+    float: left;
+}
+#header1{width: 20%;}
+#header2{width: 65%;}
+#header3{width: 15%;}
+
+#content1{width: 15%;}
+#content2{width: 60%;}
+#content3{width: 25%;}
+
+/*---------------로고-------------------*/
+#header1{
+    position: relative;
+}
+#logo{
+    width: 80%;
+    position: absolute;
+    margin:auto;
+    /*방법 1*/
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    
+    /*방법 2*/
+    /* left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%); */
+
+}
+
+
+
+/*--------------로그인폼----------------*/
+#content3{
+    position: relative;
+}
+
+#login{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+}
+#login>*{
+    width: 100%;
+}
+#login_form{
+    height: 80%; /*로그인에 관련된 영역 80%잡기 나머지 20%는 etc부분*/
+}
+#etc{
+    height: 20%;
+    text-align: center; /*안에 있는 a태그들 가운데 정렬*/
+}
+#etc>a{
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+#login_area{
+    width: 60%; /*아이디 입력 비번 입력 영역 길이 */
+}
+#login_btn{
+    width: 40%; /*로그인버튼 영역의 길이*/
+}
+
+#login_area>input{ /*login_area div요소안에 있는 input요소들 선택
+                    영역에 있는 input요소들이 영역에 가득 차게*/
+    width: 100%;
+    height: 50%;
+}
+#login_btn>input{ /*btn 영역에 있는 input:submit 버튼을 영역에 가득 차게 */
+    width: 100%;
+    height: 100%;
+}
+/*  login_area와 login_btn 둘다 block요소이기 때문에 
+    login_area와 login_btn를 float left정렬을 통해 위로 올린다.*/
+#login_area,#login_btn{
+    float: left;
+    height: 100%;
+}
+
+/*------------------푸터바----------------------*/
+
+#footer>div{
+    width: 100%;
+}
+#footer1{
+    height: 20%;
+}
+#footer2{
+    height: 80%;
+    /* border: 3px solid black; */
+}
+
+#footer2>p{
+    margin: 0px; /*요소들 간의 간격이 생겨 0으로 초기화*/
+    width: 100%;
+    /* border: 1px solid red; */
+    font-size: 12px;
+    box-sizing: border-box;
+}
+#p1{
+    padding: 5px 20px; /*상하 좌우*/
+    height: 80%;
+}
+#p2{
+    height: 20%;
+    text-align: center;
+}
+
+#footer1>a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 15px;
+}
+
+/*-----------------------검색창-------------------------*/
+
+#header2{
+    position: relative;
+}
+
+#search_form{
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom : 0px;
+}
+#search_text,#search_btn{
+    float: left;
+    height: 100%;
+}
+#search_text{width: 80%;}
+#search_btn{width: 20%;}
+#search_form input{
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------네비바-----------------------*/
+#navibar {
+    width: 100%;
+    list-style-type: none;
+    /*ul요소에 기본적으로 위,아래 margin이 존재한다.
+    ul요소에 기본적으로 padding도 존재하기 때문에 
+    둘다 0으로 초기화*/
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+#navibar>li{
+    /* float: left; */
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    /* position: relative; 방법 2 : 기준점 잡아주기  */
+    /*임시방편 (방법 1 : navibar a태그에 scale(1) 해주기*/
+    /*방법 3 li요소를 inline-block으로 바꿔주기*/
+    display: inline-block;
+    vertical-align: top; /*inline요소들의 수직정렬 기준잡기*/
+
+
+}
+#navibar a{
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 18px;
+    /*a태그는 인라인 요소이기 때문에 width height가 적용되지 않음 */
+    width: 100%;
+    height: 100%;
+    /*때문에 블럭 요소로 변경시켜야 한다.*/
+    display: block;
+    line-height: 35px; /*보통 block 요소의 세로 길이만큼 지정하면 가운데로 온다
+                        지금은 크기를 %로 다루어 정확한 수치를 모르니 임의로 지정*/
+
+    /* transform: scale(1); 임시 방편*/ 
+}
+
+#navibar a:hover{
+    color: darkblue;
+    font-size: 20px;
+}
+#navibar>li>ul{
+    list-style-type: none;
+    padding: 0px;
+    /*평소에는 보이지 않다가 마우스를 올리면 보여지게 하기 1단계*/
+    display: none;
+}
+#navibar>li>ul a{
+    font-size: 13px;
+}
+#navibar>li>ul a:hover{
+    font-size: 15px;
+}
+
+#navibar>li>a:hover+ul{
+    /*평소에는 보이지 않다가 마우스를 올리면 보여지는 기능 2단계
+      네비바 안에 li안에 있는 a태그에 마우스가 올려졌을때 ! ul태그를~~*/
+    
+    display:block;/*none이였던 display를 block으로 바꾸면 보여지게 된다.*/
+}
+
+#navibar>li>ul:hover{
+    /*서브메뉴에 마우스가 올려졌을때도 display를 block으로 해서 보이게 만들기*/
+    display: block;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>레이아웃 관련 스타일2</title>
+    <style>
+        .position{
+            border: 1px solid black;
+        }
+        .outer{
+            position: relative;
+            /*기준을 잡아주는 속성, 절대적인 위치를 정하기 위한 기준점으로
+                만약 기준점을 잡지 않는다면 body부분이 기준이 된다.*/
+        }
+
+        #first{
+            width: 300px;
+            height: 300px;
+            background-color: bisque;
+        }
+        #second{
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+            position: absolute; /*움직이고자하는 요소(기준점) 내에서
+                                absolute를 지정하여(기준점 기준으로) 
+                                절대적인 위치로 움직인다*/
+            top: 50px;
+            left: 50px;
+        }
+        #third{
+            width: 100px;
+            height: 100px;
+            background-color: darkkhaki;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .fixed-area{
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            /* position: fixed;  */
+        }
+
+        .z-test{
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+        }
+        #z1{
+            background-color: coral;
+            top: 100px;
+            left: 100px;
+            z-index: 10000; /*z-index의 숫자가 더 높을 경우
+                                다른 요소들 보다 위쪽에 쌓겠다라는 의미*/
+        }
+
+        #z2{
+            background-color: darkblue;
+            top: 50px;
+            left: 50px;
+            z-index: 1000;
+        }
+        #z3{
+            background-color: darkcyan;
+            z-index: 5;
+        }
+
+        .vis-test{
+            width: 100px;
+            height: 100px;
+        }
+
+        #vis{
+            /* visibility: hidden; 요소는 보이지 않지만 공간은 차지한다. */
+            /* display: none; 요소도 안보이고 공간도 차지하지 않음 */
+        }
+
+        .float-test{
+            border: 1px solid black;
+            width: 70px;
+            height: 30px;
+            float: left;/*왼쪽에서부터 차례대로 공중으로 띄워져 있는것
+                            정렬+z-index가 적용된다고 보면 된다.*/
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <h1>배치 관련 스타일</h1>
+    <h3>position:절대위치와 상대위치</h3>
+
+    <!-- div.outer>(div#position{번째 자식}*3) -->
+    <div class="outer">
+        <div id="first" class="position">첫번째 자식</div>
+        <div id="second" class="position">두번째 자식</div>
+        <div id="third" class="position">세번째 자식</div>
+    </div>
+
+
+    <h3>고정 위치</h3>
+    <div class="position fixed-area"></div>
+
+    <hr>
+
+    <h3>z-index</h3>
+    <p>
+        페이지 안의 요소들을 순서대로 위로 쌓는 속성
+    </p>
+
+    <!-- div.outer>(div#z$.z-test{요소$}*3) -->
+    <div class="outer">
+        <div id="z1" class="z-test">요소1</div>
+        <div id="z2" class="z-test">요소2</div>
+        <div id="z3" class="z-test">요소3</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <h3>visiblity</h3>
+    <p>
+        페이지에 특정 요소를 보이거나 보이지 않게 하는 속성
+    </p>
+
+    <div class="vis-test" style="background-color: green;"></div>
+    <div id="vis"class="vis-test" style="background-color: lightsalmon;"></div>
+    <div class="vis-test" style="background-color: lightgray;"></div>
+
+    <hr>
+
+    <h3>float</h3>
+    <p>
+        페이지 내의 요소들을 화면으로부터 띄워서 왼쪽 또는 오른쪽으로 배치하는 속성
+    </p>
+
+    <!-- div.float-test{요소$}*5 -->
+    <div class="float-test">요소1</div>
+    <div class="float-test">요소2</div>
+    <div class="float-test">요소3</div>
+    <div class="float-test">요소4</div>
+    <div class="float-test">요소5</div>
+    <!--float속성을 사용하면 그 후에 적힌 요소들이 같이 붕 뜨게된다-->
+    <br clear="both"> <!--float속성을 해제할때 사용-->
+    <span>하하하</span>
+    <div class="test">이건 어디로</div>
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+</html>

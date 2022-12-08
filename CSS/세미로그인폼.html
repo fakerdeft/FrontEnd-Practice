@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    .login-area{
+        margin-top: 300px;
+    }
+    div#head{
+        font-size: 40px;
+        padding: 80px;
+        margin-bottom: 50px;
+        border-top: 1px solid lightgrey;
+        border-bottom: 2px solid gray;
+    }
+
+    #body{
+        width: auto;
+    }
+    #body>div{
+        background-color:whitesmoke;
+        float: left;
+    }
+    #body1{
+        width: 50%;
+    }
+    #body2{
+        width: 50%;
+    }
+    
+    #login1{
+        padding: 50px;
+        height: 200px;
+        float: right;
+        border-right: 1px solid lightgray;
+    }
+    #login2{
+        padding: 50px;
+        height: 200px;
+        float: left;
+        border-left: 1px solid lightgrey;
+    }
+
+    #bottom{
+        background-color:whitesmoke;
+        padding-top: 330px;
+        padding-bottom: 30px;
+    }
+
+    #id{
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        width: 250px;
+        height: 25px;
+    }
+    #pw{
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        width: 250px;
+        height: 25px;
+    }
+
+    #login-btn{
+        width: 257px;
+        height: 40px;
+        border: 0px;
+        border-radius: 3px;
+        background-color: rgb(69, 69, 73);
+        color: white;
+    }
+    #nomem-btn{
+        width: 257px;
+        height: 40px;
+        border: 0px;
+        border-radius: 3px;
+        background-color: lightgray;
+        color: black;
+    }
+    #enroll-btn{
+        width: 300px;
+        height: 40px;
+        border: 0px;
+        border-radius: 3px;
+        background-color: dodgerblue;
+        color: white;
+    }
+
+</style>
+
+
+
+</head>
+
+<body>
+
+    <div class="login-area">
+        <div id="head" align="center">로그인</div>
+
+        <div id="body" align="center">
+
+            <div id="body1">
+                <form action="/smp/login.me" method="post" id="login-form">
+                    <table align="center" id="login1">
+                        <tr align="left">
+                            <td style="font-size: 20px; color:rgb(69, 69, 73);">| 회원 로그인</td>
+                        </tr>
+                        <tr align="left">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="memId" id="id" placeholder="아이디" required></td>
+                        </tr>
+                        <tr align="left">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" name="memPw" id="pw" placeholder="비밀번호" required></td>
+                        </tr>
+                        <tr align="left">
+                            <td style="font-size: 12px;">
+                                <input type="checkbox" name="remem" id="remem"> 아이디 저장
+                            </td>
+                        </tr>
+                        <tr align="left">
+                            <th>
+                                <button type="submit" id="login-btn">로그인</button>
+                            </th>
+                        </tr>
+                        <tr align="right">
+                            <td>
+                                <a href="">아이디 찾기</a> |
+                                <a href="">비밀번호 찾기</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 17px;">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+            <div id="body2">
+                <form action="/smp/login.me" method="post" id="login-form">
+                    <table align="center" id="login2">
+                        <tr align="left">
+                            <td style="font-size: 20px; color:rgb(69, 69, 73)">| 비회원 구매조회</td>
+                        </tr>
+                        <tr align="left">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="memId" id="id" placeholder="주문자명" required></td>
+                        </tr>
+                        <tr align="left">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" name="memPw" id="pw" placeholder="주문번호" required></td>
+                        </tr>
+                        <tr align="left">
+                            <td style="padding-top: 5px;">
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr align="left">
+                            <th>
+                                <button type="submit" id="nomem-btn">주문 배송 조회</button>
+                            </th>
+                        </tr>
+                        <tr>    
+                            <td style="color:gray;">
+                                ※주문번호와 비밀번호를 잊으신 경우, <br>
+                                고객센터로 문의해주세요.
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="bottom" align="center">
+            <p>아직 장인의 회원이 아니신가요?</p>
+            <p>
+                <button type="" id="enroll-btn">회원가입</button>
+            </p>
+        </div>
+            
+        </div>
+        
+        
+        <!--
+            <button type="button" onclick="enrollPage();">회원가입</button>
+
+    <div id="user-info">
+      
+    	<b><%=loginMem.getMemName() %>님 환영합니다.</b> <br><br>
+    	<div align="center">
+            <a href="">마이페이지 | </a>
+    		<a href="">로그아웃</a>
+    	</div>
+    </div>
+-->
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

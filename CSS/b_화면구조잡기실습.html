@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>화면 구조 잡기 실습</title>
+    <style>
+        
+        div{
+            border: 1px solid red;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        .outer{
+            width: 1000px;
+            height: 800px;
+        }
+        
+        .outer>div{
+            width: 100%;
+        }
+
+        #header,#footer{
+            height: 20%;
+        }
+        #content{
+            height: 60%;
+        }
+        #header>div,#content>div{
+            height: 100%;
+            float: left;
+        }
+        #header1{
+            width: 30%;
+        }
+        #header2{
+            width: 70%;
+        }
+        #content1{
+            width: 15%;
+        }
+        #content2{
+            width: 65%;
+        }
+        #content3{
+            width: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div id="header">
+            <div id="header1"></div>
+            <div id="header2"></div>
+        </div>
+        
+        <div id="content">
+            <div id="content1"></div>
+            <div id="content2"></div>
+            <div id="content3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+/*CSS 영역 (스타일정보 바로 작성)*/
+
+/*1.속성 선택자*/ 
+
+/*div중 name 속성값이 name1과 일치하는 요소*/
+div[name=name1]{
+    background-color: burlywood;
+}
+
+/*div 중 name 속성값에 name1이 포함되어있는 요소*/
+div[name~=name1]{
+    background-color: blueviolet;
+}
+
+/*div중 class 속성값이 div로 시작되는 요소(한단어 기준)*/
+div[class|=div]{
+    background-color: darkgoldenrod;
+}
+
+/* div중 name 속성값이 na로 시작되는 요소 */
+div[name^=na]{
+    background-color: darkkhaki;
+}
+
+/* div중 class 속성값이 ss로 끝나는 요소 */
+div[class$=ss]{
+    background-color: firebrick;
+}
+
+/* div중 class 속성값에 i가 포함되어 있는 요소 */
+div[class*=i]{
+    background-color: violet;
+}
+
+/*class 속성값이 div-class인 애들중에 name 속성값에 name3이 
+            포함된 요소를 글자색 흰색으로*/
+
+.div-class[name~=name3]{
+    color: white;
+}
+
+/*2.자손선택자와 후손선택자*/
+/* a>b : a요소의 자손들 중 b요소들만 선택*/
+#test1>h4{
+    background-color: darkorange;
+}
+/* div안에 있는 li 요소를 선택하고자 한다면? */
+#test1 li{
+    background-color: cadetblue;
+}
+
+#test1>ul>li{
+    background-color: aquamarine;
+}
+
+/* 3. 동위 선택자 */
+/* a+b : a요소 뒤에 있는 b요소 하나선택 */
+#test2+div{
+    background-color: tomato;
+}
+/* a~b : a요소 뒤에 있는 모든 b요소 선택*/
+/* #test2~div{
+    background-color: coral;
+} */
+
+#test2+ul{ /* 바로 뒤에 있는 요소가 아니라서 선택되지 않음 */
+    background-color: cornflowerblue;
+}
+
+.area{
+    background-color: deepskyblue;
+    width: 100px;
+    height: 100px;
+}
+#active-test:active{
+    background-color: deeppink;
+    color: white;
+    cursor: pointer;
+}
+
+#hover-test:hover{
+    background-color: lightcoral;
+    color: plum;
+    cursor: wait;
+}
+
+/* 5.상태 선택자 */
+/* 기본적으로 해당 선택된 요소 자체에 스타일 반영 */
+input[type=checkbox]:checked{
+    width: 50px;
+    height: 50px;
+    /* font-size: 50px; */ 
+}
+/* 동위 선택자로 라벨을 선택해줘야 글씨 크기를 키울 수 있다. */
+input[type=checkbox]:checked+label{
+    font-size: 50px;
+}
+
+input[name^=user]:focus{
+    background-color: lightpink;
+}
+
+input[name^=user]:disabled{
+    background: red;
+}
+input[name^=user]:enabled{
+    background-color: skyblue;
+}
+
+button:disabled{
+    background-color: aqua;
+}
+button:enabled{
+    background-color: cornflowerblue;
+}

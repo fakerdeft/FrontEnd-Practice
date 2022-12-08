@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>로그인 폼</title>
+    <style>
+        div,input{
+            box-sizing: border-box;
+        }
+        #content3{ /*임시로 영역잡기*/
+            width: 300px;
+            height: 600px;
+        }
+        #login{
+            width: 100%;
+            height: 30%;
+        }
+        #login>*{
+            width: 100%;
+        }
+        #login_form{
+            height: 80%; /*로그인에 관련된 영역 80%잡기 나머지 20%는 etc부분*/
+        }
+        #etc{
+            height: 20%;
+            text-align: center; /*안에 있는 a태그들 가운데 정렬*/
+        }
+        #etc>a{
+            text-decoration: none;
+            color: black;
+            margin: 15px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+        #login_area{
+            width: 60%; /*아이디 입력 비번 입력 영역 길이 */
+        }
+        #login_btn{
+            width: 40%; /*로그인버튼 영역의 길이*/
+        }
+        
+        #login_area>input{ /*login_area div요소안에 있는 input요소들 선택
+                            영역에 있는 input요소들이 영역에 가득 차게*/
+            width: 100%;
+            height: 50%;
+        }
+        #login_btn>input{ /*btn 영역에 있는 input:submit 버튼을 영역에 가득 차게 */
+            width: 100%;
+            height: 100%;
+        }
+        /*  login_area와 login_btn 둘다 block요소이기 때문에 
+            login_area와 login_btn를 float left정렬을 통해 위로 올린다.*/
+        #login_area,#login_btn{
+            float: left;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="content3">
+        
+        <!--전체를 감싸는 div영역 태그 -->
+        <div id="login">
+            <!--input요소들을 넣을 form 영역 태그 -->
+            <form action="test.do" method="post" id="login_form">
+                <!--아이디 입력과 비밀번호 입력을 넣을 영역-->
+                <div id="login_area">
+                    <input type="text" name="userId" id="userId" placeholder="아이디 입력" required>
+                    <input type="password" name="userPwd" id="userPwd" placeholder="비밀번호 입력" required>
+                </div>
+                <!--로그인 버튼을 넣을 영역-->
+                <div id="login_btn">
+                    <input type="submit" value="로그인">
+                </div>
+            </form>
+            <!--회원가입과 id/pwd 찾기 페이지로 이동할 수 있는 a태그 영역-->
+            <div id="etc">
+                <a href="">회원가입</a>
+                <a href="">ID/PWD 찾기</a>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</body>
+</html>

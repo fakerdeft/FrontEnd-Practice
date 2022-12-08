@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>레이아웃 관련 스타일</title>
+    <style>
+        .size-test{
+            border: 10px solid tomato;
+        }
+        #test1{
+            width: 400px;
+            height: 200px;
+        }
+        #test2{
+            width: 100%;
+            height: 200px;
+        }  
+
+        .display-test{
+            width: 120px;
+            height: 120px;
+            border: 1px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .inline{
+            display: inline; /*width와 height가 적용되지 않는다.*/
+        }
+        .inline-block{
+            display: inline-block;
+        }
+        .block{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>레이아웃 관련 스타일</h1>
+    <!--
+        블럭요소 : 한줄 단위로 영역이 잡힌다/줄바꿈 발생(div,p,pre,h)
+        인라인 요소 : content부분만 영역이 잡힌다.(sapn,label,input...)
+    -->
+
+    <h3>width/height</h3>
+    <p>
+        content영역의 크기를 조절하는 속성
+    </p>
+
+    <h4>고정크기 px</h4>
+    <div id="test1" class="size-test"></div>
+
+    <!-- h4{가변크기 %}+div#test2.size-test -->
+    <h4>가변크기 %</h4>
+    <div id="test2" class="size-test"></div>
+
+    <h3>display : 화면 배치 방법</h3>
+    <p>
+        블럭요소와 인라인 요소의 속성을 변경하여 배치 방식을 변경한다
+    </p>
+
+    <pre>
+        선택자{
+            display:inline/inline-block/block;
+        }
+    </pre>
+
+    <!-- 기존의 블럭요소인 div를 인라인 요소로 바꿔보기 -->
+
+    <!-- div.display-test{번째 영역}*5 -->
+    <div class="display-test red">첫번째 영역</div>
+    <div class="display-test orange">두번째 영역</div>
+    <div class="display-test yellow">세번째 영역</div>
+    <div class="display-test green">네번째 영역</div>
+    <div class="display-test blue">다섯번째 영역</div>
+
+    <h4>display:inline</h4>
+    <!-- div.display-test.inline{번째 영역}*5 -->
+    <!--inline요소는 공백 또는 줄바꿈이 있으면 틈이 생긴다-->
+    <div class="display-test inline red">첫번째 영역</div><div class="display-test inline orange">두번째 영역</div><div class="display-test inline yellow">세번째 영역</div><div class="display-test inline green">네번째 영역</div><div class="display-test inline blue">다번째 영역</div>
+
+
+    <h4>inline-block</h4>
+    <!--inline으로 배치하고 싶으나 width와 height를 유지한다.-->
+    <div class="display-test inline-block red">첫번째 영역</div><div class="display-test inline-block orange">두번째 영역</div><div class="display-test inline-block yellow">세번째 영역</div><div class="display-test inline-block green">네번째 영역</div><div class="display-test inline-block blue">다번째 영역</div>
+
+    <br>
+    <!-- 기존 inline요소를 block 요소로 변경 -->
+    <h4>기존 span</h4>
+    <!-- span.display-test{번째 영역}*5 -->
+    <span class="display-test red">첫번째 영역</span>
+    <span class="display-test orange">두번째 영역</span>
+    <span class="display-test yellow">세번째 영역</span>
+    <span class="display-test green">네번째 영역</span>
+    <span class="display-test blue">다섯번째 영역</span>
+
+    <h4>display:block</h4>
+    <span class="display-test block red">첫번째 영역</span>
+    <span class="display-test block orange">두번째 영역</span>
+    <span class="display-test block yellow">세번째 영역</span>
+    <span class="display-test block green">네번째 영역</span>
+    <span class="display-test block blue">다섯번째 영역</span>
+
+
+    <br><br>
+
+    <a href="00_index.html">인덱스로</a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
